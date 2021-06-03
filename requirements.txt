@@ -6,3 +6,7 @@ torch_geometric  # version ?
 torch_sparse  # version ?
 torch_scatter  # version ?
 hyperopt
+
+# pytorch_lightning_simple
+torchvision
+optuna
