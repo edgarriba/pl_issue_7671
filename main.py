@@ -14,7 +14,9 @@ from cluster_gnn.data import loader
 # slurm hack
 os.environ["SLURM_JOB_NAME"] = "bash"
 
-ROOT_DIR = '/home/jlc1n20/projects/cluster_gnn/'
+from pathlib import Path
+# ROOT_DIR = '/home/jlc1n20/projects/cluster_gnn/'
+ROOT_DIR = str(Path(__file__).parent.resolve())
 MODEL_DIR = ROOT_DIR + '/models/tune/'
 
 def train_gnn(config, data_module, num_epochs=10, num_gpus=4, callbacks=None,
@@ -94,7 +96,8 @@ def tune_gnn(data_module, num_samples=10, num_epochs=10, gpus_per_trial=2,
 
 
 if __name__ == '__main__':
-    num_gpus = 2
+    #num_gpus = 2
+    num_gpus = 1
     cur_best_params = [{
         'learn_rate': 3.75e-5,
         'pos_weight': 21.5,
